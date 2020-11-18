@@ -9,22 +9,24 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StopWatch;
 
 @Component
-public class EventRunner implements ApplicationRunner {
+public class OrderRunner implements ApplicationRunner {
 
     @Autowired
-    ApplicationEventPublisher applicationEventPublisher;
+    OrderService orderService;
 
     @Override
-    @Transactional
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println("START RUNNER ON THREAD : " + Thread.currentThread());
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start();
-        applicationEventPublisher.publishEvent(new MyEvent(this, new Event()));
-        Thread.sleep(3000);
+//
+//        System.out.println("START RUNNER ON THREAD : " + Thread.currentThread());
+//        StopWatch stopWatch = new StopWatch();
+//        stopWatch.start();
 
-        stopWatch.stop();
-        System.out.println("Runner Task Time : " + stopWatch.getTotalTimeSeconds());
+        // 주문 요총하는척...
+        System.out.println("REQUEST ORDER");
+        orderService.save();
+
+//        stopWatch.stop();
+//        System.out.println("Runner Task Time : " + stopWatch.getTotalTimeSeconds());
 
         System.out.println("FINISHED");
     }

@@ -1,7 +1,7 @@
 package io.alxndr.demospringevent;
 
 
-public class EventRequestDto {
+public class OrderRequestDto {
 
     private String title;
 
@@ -9,7 +9,7 @@ public class EventRequestDto {
 
     private String writer;
 
-    public EventRequestDto(String title, String content, String writer) {
+    public OrderRequestDto(String title, String content, String writer) {
         this.title = title;
         this.content = content;
         this.writer = writer;

@@ -2,20 +2,20 @@ package io.alxndr.demospringevent;
 
 import org.springframework.context.ApplicationEvent;
 
-public class MyEvent extends ApplicationEvent {
+public class OrderEvent extends ApplicationEvent {
 
-    private Event data;
+    private Order data;
 
-    public MyEvent(Object source) {
+    public OrderEvent(Object source) {
         super(source);
     }
 
-    public MyEvent(Object source, Event data) {
+    public OrderEvent(Object source, Order data) {
         super(source);
         this.data = data;
     }
 
-    public Event getData() {
+    public Order getData() {
         return data;
     }
 }
