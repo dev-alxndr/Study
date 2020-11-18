@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.event.TransactionalEventListener;
 import org.springframework.util.StopWatch;
 
 @Component
@@ -49,6 +50,13 @@ public class AnotherEventHandler {
 
         System.out.println("END OF Second @EventListner / " + stopWatch.getTotalTimeSeconds());
     }
+
+    @Async
+    @TransactionalEventListener
+    public void errorOccured(MyEvent event) {
+        throw new RuntimeException("Error");
+    }
+
 
 
 }
