@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * @see https://ivvve.github.io/2019/06/02/java/Spring/event-listener-2/
  */
 @SpringBootApplication
-@EnableAsync
+//@EnableAsync
 public class DemoSpringEventApplication {
 
     public static void main(String[] args) {

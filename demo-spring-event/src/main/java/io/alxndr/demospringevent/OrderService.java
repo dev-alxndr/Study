@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class OrderService {
@@ -12,14 +13,9 @@ public class OrderService {
     @Autowired
     ApplicationEventPublisher applicationEventPublisher;
 
+    @Transactional
     public void save() {
         System.out.println("ORDER PROCESSING...");
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         Order order = new Order();
         order.setOrderId(1L);
@@ -27,8 +23,7 @@ public class OrderService {
         order.setPrice("10000");
         order.setMethod("CREDIT");
 
+        applicationEventPublisher.publishEvent(order);
         System.out.println("ORDER SUCCESS");
-
-        applicationEventPublisher.publishEvent(new OrderEvent(this, order));
     }
 }

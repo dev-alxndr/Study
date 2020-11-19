@@ -16,17 +16,17 @@ public class OrderRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//
-//        System.out.println("START RUNNER ON THREAD : " + Thread.currentThread());
-//        StopWatch stopWatch = new StopWatch();
-//        stopWatch.start();
+
+        System.out.println("START RUNNER ON THREAD : " + Thread.currentThread());
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
 
         // 주문 요총하는척...
         System.out.println("REQUEST ORDER");
         orderService.save();
 
-//        stopWatch.stop();
-//        System.out.println("Runner Task Time : " + stopWatch.getTotalTimeSeconds());
+        stopWatch.stop();
+        System.out.println("Runner Task Time : " + stopWatch.getTotalTimeSeconds());
 
         System.out.println("FINISHED");
     }
