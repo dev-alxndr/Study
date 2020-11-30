@@ -9,5 +9,4 @@ public class CoreService {
         return "I'm Alive";
     }
 
-
 }
