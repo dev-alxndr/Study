@@ -1,0 +1,5 @@
+rootProject.name = 'demo-spring-module'
+include 'module-core'
+include 'module-web'
+include 'module-admin'
+
