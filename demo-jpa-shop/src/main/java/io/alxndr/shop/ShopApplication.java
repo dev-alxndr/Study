@@ -1,12 +1,11 @@
 package io.alxndr.shop;
 
-import io.alxndr.shop.domain.Member;
+import io.alxndr.shop.domain.Orders;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.List;
 
 public class ShopApplication {
 
@@ -19,6 +18,10 @@ public class ShopApplication {
         tx.begin();
 
         try {
+            Orders newOrder = new Orders();
+            newOrder.setName("order");
+
+            em.persist(newOrder);
 
         } catch (Exception e) {
             tx.rollback();
