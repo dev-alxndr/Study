@@ -3,6 +3,8 @@ package io.alxndr.shop.domain;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Orders {
@@ -20,6 +22,9 @@ public class Orders {
     private OrderStatus status;
 
     private LocalDateTime orderDate;
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems = new ArrayList<>();
 
     public Long getId() {
         return id;
