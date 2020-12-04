@@ -10,7 +10,12 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.hibernate:hibernate-entitymanager:5.3.10.Final'
+    runtimeOnly 'com.h2database:h2:1.4.200'
 
+    // Java version 11
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
