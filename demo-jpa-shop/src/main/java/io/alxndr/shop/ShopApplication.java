@@ -18,10 +18,6 @@ public class ShopApplication {
         tx.begin();
 
         try {
-            Orders newOrder = new Orders();
-            newOrder.setName("order");
-
-            em.persist(newOrder);
 
         } catch (Exception e) {
             tx.rollback();

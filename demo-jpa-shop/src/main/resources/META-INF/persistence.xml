@@ -5,6 +5,8 @@
     <persistence-unit name="shop">
         <class>io.alxndr.shop.domain.Member</class>
         <class>io.alxndr.shop.domain.Orders</class>
+        <class>io.alxndr.shop.domain.Item</class>
+        <class>io.alxndr.shop.domain.OrderItem</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>

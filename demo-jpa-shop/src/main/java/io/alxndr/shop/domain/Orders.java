@@ -1,6 +1,8 @@
 package io.alxndr.shop.domain;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class Orders {
@@ -10,21 +12,14 @@ public class Orders {
     @Column(name = "order_id")
     private Long id;
 
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
 
-    public Long getId() {
-        return id;
-    }
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private LocalDateTime orderDate;
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }
