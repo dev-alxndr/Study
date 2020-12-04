@@ -20,12 +20,6 @@ public class ShopApplication {
 
         try {
 
-            Member newMember = new Member();
-            newMember.setId(1L);
-            newMember.setName("ALXNDR");
-
-            em.persist(newMember);
-            tx.commit();
         } catch (Exception e) {
             tx.rollback();
         } finally {

@@ -2,9 +2,9 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
+group 'org.demo-jpa-shop'
 version '1.0-SNAPSHOT'
-
+sourceCompatibility = JavaVersion.VERSION_11
 repositories {
     mavenCentral()
 }
@@ -12,6 +12,7 @@ repositories {
 dependencies {
     implementation 'org.hibernate:hibernate-entitymanager:5.3.10.Final'
     implementation 'com.h2database:h2:1.4.199'
+    compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.4.25.Final'
 
     // Java version 11
     implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"

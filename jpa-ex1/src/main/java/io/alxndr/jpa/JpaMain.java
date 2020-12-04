@@ -22,7 +22,7 @@ public class JpaMain {
             newMember.setId(1L);
             newMember.setName("ALXNDR");
 
-//            em.persist(newMember);
+            em.persist(newMember);
             List<Member> result = em.createQuery("select m from Member m", Member.class)
                     .getResultList();
 
