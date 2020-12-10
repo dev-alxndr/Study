@@ -259,3 +259,176 @@
 2020-12-10 12:55:23.203  INFO 19010 --- [http-nio-8080-exec-1] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/
 2020-12-10 12:56:44.227  INFO 19010 --- [http-nio-8080-exec-4] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/
 2020-12-10 12:56:45.211  INFO 19010 --- [http-nio-8080-exec-5] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/
+2020-12-10 12:57:44.406  INFO 19010 --- [http-nio-8080-exec-9] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/
+2020-12-10 12:57:50.104  INFO 19010 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-10 12:57:50.105  INFO 19010 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-12-10 12:57:50.108  INFO 19010 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-10 12:57:50.108  INFO 19010 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-10 12:57:50.111  INFO 19010 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-10 12:57:53.451  INFO 19131 --- [main] i.a.d.DemoSpringUploadApplication        : Starting DemoSpringUploadApplication using Java 11.0.9 on ChoiuiMcBookPro with PID 19131 (/Users/alxndr/Documents/workspace/Study/demo-spring-upload/build/classes/java/main started by alxndr in /Users/alxndr/Documents/workspace/Study/demo-spring-upload)
+2020-12-10 12:57:53.454  INFO 19131 --- [main] i.a.d.DemoSpringUploadApplication        : The following profiles are active: local
+2020-12-10 12:57:54.289  INFO 19131 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-10 12:57:54.312  INFO 19131 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2020-12-10 12:57:54.833  INFO 19131 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-10 12:57:54.839  INFO 19131 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-10 12:57:54.840  INFO 19131 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-10 12:57:54.909  INFO 19131 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-10 12:57:54.910  INFO 19131 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1411 ms
+2020-12-10 12:57:54.963  INFO 19131 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-10 12:57:55.116  INFO 19131 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-10 12:57:55.123  INFO 19131 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-12-10 12:57:55.234  INFO 19131 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-10 12:57:55.288  INFO 19131 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-10 12:57:55.329  WARN 19131 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 12:57:55.347  INFO 19131 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-12-10 12:57:55.512  INFO 19131 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-10 12:57:55.514  INFO 19131 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-10 12:57:55.718  INFO 19131 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-10 12:57:55.817  INFO 19131 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-10 12:57:55.821  INFO 19131 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-10 12:57:55.823  INFO 19131 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-10 12:57:55.834  INFO 19131 --- [main] i.a.d.DemoSpringUploadApplication        : Started DemoSpringUploadApplication in 2.912 seconds (JVM running for 3.9)
+2020-12-10 12:57:55.995  INFO 19131 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-10 12:57:56.009  INFO 19131 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-10 12:58:02.693  INFO 19131 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-10 12:58:02.695  INFO 19131 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-10 12:58:02.697  INFO 19131 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2020-12-10 12:58:02.828  INFO 19131 --- [http-nio-8080-exec-1] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/file/
+2020-12-10 13:00:55.025  INFO 19131 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-10 13:00:55.028  INFO 19131 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-12-10 13:00:55.032  INFO 19131 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-10 13:00:55.033  INFO 19131 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-10 13:00:55.037  INFO 19131 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-10 13:01:02.521  INFO 19189 --- [main] i.a.d.DemoSpringUploadApplication        : Starting DemoSpringUploadApplication using Java 11.0.9 on ChoiuiMcBookPro with PID 19189 (/Users/alxndr/Documents/workspace/Study/demo-spring-upload/build/classes/java/main started by alxndr in /Users/alxndr/Documents/workspace/Study/demo-spring-upload)
+2020-12-10 13:01:02.524  INFO 19189 --- [main] i.a.d.DemoSpringUploadApplication        : The following profiles are active: local
+2020-12-10 13:01:03.183  INFO 19189 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-10 13:01:03.206  INFO 19189 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2020-12-10 13:01:03.639  INFO 19189 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-10 13:01:03.645  INFO 19189 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-10 13:01:03.646  INFO 19189 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-10 13:01:03.704  INFO 19189 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-10 13:01:03.705  INFO 19189 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1116 ms
+2020-12-10 13:01:03.751  INFO 19189 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-10 13:01:03.883  INFO 19189 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-10 13:01:03.890  INFO 19189 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-12-10 13:01:04.015  INFO 19189 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-10 13:01:04.073  INFO 19189 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-10 13:01:04.113  WARN 19189 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 13:01:04.132  INFO 19189 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-12-10 13:01:04.294  INFO 19189 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-10 13:01:04.299  INFO 19189 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-10 13:01:04.455  INFO 19189 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-10 13:01:04.530  INFO 19189 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-10 13:01:04.534  INFO 19189 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-10 13:01:04.534  INFO 19189 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-10 13:01:04.545  INFO 19189 --- [main] i.a.d.DemoSpringUploadApplication        : Started DemoSpringUploadApplication in 3.627 seconds (JVM running for 5.117)
+2020-12-10 13:01:04.718  INFO 19189 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-10 13:01:04.750  INFO 19189 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-10 13:01:24.571  INFO 19189 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-10 13:01:24.574  INFO 19189 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-10 13:01:24.576  INFO 19189 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2020-12-10 13:01:24.756  INFO 19189 --- [http-nio-8080-exec-1] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/file/
+2020-12-10 13:01:58.173  INFO 19189 --- [http-nio-8080-exec-4] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/file/
+2020-12-10 13:03:05.182  INFO 19189 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-10 13:03:05.183  INFO 19189 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-12-10 13:03:05.188  INFO 19189 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-10 13:03:05.188  INFO 19189 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-10 13:03:05.192  INFO 19189 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-10 13:03:08.803  INFO 19249 --- [main] i.a.d.DemoSpringUploadApplication        : Starting DemoSpringUploadApplication using Java 11.0.9 on ChoiuiMcBookPro with PID 19249 (/Users/alxndr/Documents/workspace/Study/demo-spring-upload/build/classes/java/main started by alxndr in /Users/alxndr/Documents/workspace/Study/demo-spring-upload)
+2020-12-10 13:03:08.806  INFO 19249 --- [main] i.a.d.DemoSpringUploadApplication        : The following profiles are active: local
+2020-12-10 13:03:10.232  INFO 19249 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-10 13:03:10.256  INFO 19249 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2020-12-10 13:03:11.239  INFO 19249 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-10 13:03:11.252  INFO 19249 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-10 13:03:11.253  INFO 19249 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-10 13:03:11.362  INFO 19249 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-10 13:03:11.363  INFO 19249 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2505 ms
+2020-12-10 13:03:11.443  INFO 19249 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-10 13:03:11.636  INFO 19249 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-10 13:03:11.648  INFO 19249 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-12-10 13:03:11.806  INFO 19249 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-10 13:03:11.867  INFO 19249 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-10 13:03:11.930  WARN 19249 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 13:03:11.932  INFO 19249 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-12-10 13:03:12.116  INFO 19249 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-10 13:03:12.182  INFO 19249 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-10 13:03:12.239  INFO 19249 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-10 13:03:12.425  INFO 19249 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-10 13:03:12.428  INFO 19249 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-10 13:03:12.429  INFO 19249 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-10 13:03:12.439  INFO 19249 --- [main] i.a.d.DemoSpringUploadApplication        : Started DemoSpringUploadApplication in 4.581 seconds (JVM running for 5.538)
+2020-12-10 13:03:12.483  INFO 19249 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-10 13:03:12.500  INFO 19249 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-10 13:03:16.250  INFO 19249 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-10 13:03:16.251  INFO 19249 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-10 13:03:16.252  INFO 19249 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2020-12-10 13:03:16.376  INFO 19249 --- [http-nio-8080-exec-1] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/file/
+2020-12-10 13:03:40.220  INFO 19249 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-10 13:03:40.221  INFO 19249 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-12-10 13:03:40.224  INFO 19249 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-10 13:03:40.225  INFO 19249 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-10 13:03:40.228  INFO 19249 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-10 13:03:43.883  INFO 19273 --- [main] i.a.d.DemoSpringUploadApplication        : Starting DemoSpringUploadApplication using Java 11.0.9 on ChoiuiMcBookPro with PID 19273 (/Users/alxndr/Documents/workspace/Study/demo-spring-upload/build/classes/java/main started by alxndr in /Users/alxndr/Documents/workspace/Study/demo-spring-upload)
+2020-12-10 13:03:43.887  INFO 19273 --- [main] i.a.d.DemoSpringUploadApplication        : The following profiles are active: local
+2020-12-10 13:03:44.639  INFO 19273 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-10 13:03:44.665  INFO 19273 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2020-12-10 13:03:45.153  INFO 19273 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-10 13:03:45.160  INFO 19273 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-10 13:03:45.160  INFO 19273 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-10 13:03:45.227  INFO 19273 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-10 13:03:45.227  INFO 19273 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1285 ms
+2020-12-10 13:03:45.264  INFO 19273 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-10 13:03:45.369  INFO 19273 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-10 13:03:45.378  INFO 19273 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-12-10 13:03:45.506  INFO 19273 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-10 13:03:45.579  INFO 19273 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-10 13:03:45.639  INFO 19273 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-12-10 13:03:45.639  WARN 19273 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 13:03:45.821  INFO 19273 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-10 13:03:45.883  INFO 19273 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-10 13:03:45.993  INFO 19273 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-10 13:03:46.122  INFO 19273 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-10 13:03:46.124  INFO 19273 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-10 13:03:46.125  INFO 19273 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-10 13:03:46.138  INFO 19273 --- [main] i.a.d.DemoSpringUploadApplication        : Started DemoSpringUploadApplication in 2.71 seconds (JVM running for 3.551)
+2020-12-10 13:03:46.239  INFO 19273 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-10 13:03:46.253  INFO 19273 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-10 13:03:52.489  INFO 19273 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-10 13:03:52.492  INFO 19273 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-10 13:03:52.493  INFO 19273 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2020-12-10 13:03:52.652  INFO 19273 --- [http-nio-8080-exec-1] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/file/
+2020-12-10 13:05:13.651  INFO 19273 --- [http-nio-8080-exec-7] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/file/
+2020-12-10 13:05:40.292  INFO 19273 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-10 13:05:40.293  INFO 19273 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-12-10 13:05:40.297  INFO 19273 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-10 13:05:40.297  INFO 19273 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-10 13:05:40.300  INFO 19273 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-10 13:05:43.975  INFO 19300 --- [main] i.a.d.DemoSpringUploadApplication        : Starting DemoSpringUploadApplication using Java 11.0.9 on ChoiuiMcBookPro with PID 19300 (/Users/alxndr/Documents/workspace/Study/demo-spring-upload/build/classes/java/main started by alxndr in /Users/alxndr/Documents/workspace/Study/demo-spring-upload)
+2020-12-10 13:05:43.978  INFO 19300 --- [main] i.a.d.DemoSpringUploadApplication        : The following profiles are active: local
+2020-12-10 13:05:44.652  INFO 19300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-10 13:05:44.683  INFO 19300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces.
+2020-12-10 13:05:45.202  INFO 19300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-10 13:05:45.208  INFO 19300 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-10 13:05:45.209  INFO 19300 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-10 13:05:45.268  INFO 19300 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-10 13:05:45.269  INFO 19300 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1247 ms
+2020-12-10 13:05:45.306  INFO 19300 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-10 13:05:45.432  INFO 19300 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-10 13:05:45.440  INFO 19300 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-12-10 13:05:45.575  INFO 19300 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-10 13:05:45.634  INFO 19300 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-10 13:05:45.693  WARN 19300 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 13:05:45.694  INFO 19300 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-12-10 13:05:45.860  INFO 19300 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-10 13:05:45.946  INFO 19300 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-10 13:05:46.046  INFO 19300 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-12-10 13:05:46.180  INFO 19300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-10 13:05:46.183  INFO 19300 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-10 13:05:46.184  INFO 19300 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-10 13:05:46.198  INFO 19300 --- [main] i.a.d.DemoSpringUploadApplication        : Started DemoSpringUploadApplication in 2.671 seconds (JVM running for 3.566)
+2020-12-10 13:05:46.285  INFO 19300 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-10 13:05:46.300  INFO 19300 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-10 13:05:48.526  INFO 19300 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-10 13:05:48.526  INFO 19300 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-10 13:05:48.528  INFO 19300 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2020-12-10 13:05:48.659  INFO 19300 --- [http-nio-8080-exec-1] i.a.d.AttachmentController               : /Users/alxndr//Users/alxndr/Documents/file/

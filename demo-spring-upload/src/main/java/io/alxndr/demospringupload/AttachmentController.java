@@ -27,11 +27,11 @@ public class AttachmentController {
 
     @GetMapping
     public String index() {
-        logger.info(System.getProperty("user.home") + File.separator + filePath + File.separator );
+        logger.info(filePath + File.separator );
         return "index";
     }
 
-    @PostMapping("post")
+    @PostMapping
     @ResponseBody
     public AttachMentDto write(@RequestParam("file") MultipartFile files) {
         AttachMentDto attachMentDto = null;
