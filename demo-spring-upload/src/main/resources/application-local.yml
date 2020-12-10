@@ -15,5 +15,5 @@ logging:
     path: ../logs
 file:
   upload:
-    path: Documents/file
+    path: /Users/alxndr/Documents
 
