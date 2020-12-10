@@ -15,6 +15,9 @@ public class WebConfig implements WebMvcConfigurer {
     @Value("${file.upload.path}")
     private String filePath;
 
+    /*
+    * img/** 로 들어오는 요청은 image path에서 파일로 찾는다.
+    * */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         String masterPath = filePath + File.separator;

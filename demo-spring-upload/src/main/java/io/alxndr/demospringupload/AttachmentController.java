@@ -5,6 +5,11 @@ import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +19,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.UUID;
 
 @Controller
@@ -61,6 +70,19 @@ public class AttachmentController {
         }
 
         return attachMentDto;
+    }
+
+    @GetMapping("/download")
+    public ResponseEntity<Resource> fileDownload(@RequestParam("file-name") String fileName) throws IOException {
+//        FileDto fileDto = fileService.getFile(fileId);
+        Path path = Paths.get(fileName);
+        Resource resource = new InputStreamResource(Files.newInputStream(path));
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + "TESTFile.jpg" + "\"")
+                .body(resource);
+
+        //.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + ORIGINAL FILENAME + "\"")
     }
 
 }

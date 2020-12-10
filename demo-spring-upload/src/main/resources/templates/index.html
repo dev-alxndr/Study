@@ -113,9 +113,10 @@
             multiple:false,
             accept: ".jpg, .png",
             callback : function(data) {
+                console.log(data);
                 var $div = $("#images");
-
                 var tag = "<img src='/img/ " + data.savedFileName + "'>";
+                tag += "<a class='card-text' href='/download?file-name=" + data.filePath + "'>" + data.originalFileName + "</a>"
                 $div.append(tag);
             }
         });
