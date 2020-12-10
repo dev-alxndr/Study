@@ -39,7 +39,8 @@ public class AttachmentController {
             String origFilename = files.getOriginalFilename();
             String filename = UUID.randomUUID().toString() + FilenameUtils.EXTENSION_SEPARATOR + FilenameUtils.getExtension(origFilename);
             /* 실행되는 위치의 'files' 폴더에 파일이 저장됩니다. */
-            String savePath = System.getProperty("user.home") + File.separator + filePath + File.separator + FileUtil.FileType.IMAGE.getPath();
+//            String savePath = System.getProperty("user.home") + File.separator + filePath + File.separator + FileUtil.FileType.IMAGE.getPath();
+            String savePath = filePath + File.separator + FileUtil.FileType.IMAGE.getPath();
             /* 파일이 저장되는 폴더가 없으면 폴더를 생성합니다. */
             if (!new File(savePath).exists()) {
                 try{

@@ -17,7 +17,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        String masterPath = System.getProperty("user.home") + File.separator + filePath + File.separator;
+        String masterPath = filePath + File.separator;
         registry.addResourceHandler("/img/**")
                 .addResourceLocations("file://" + masterPath + "images/");
     }
