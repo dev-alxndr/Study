@@ -15,5 +15,5 @@ logging:
     path: ../logs
 file:
   upload:
-    path: /home/ubuntu/app/file
+    path: home/ubuntu/app/file
 
