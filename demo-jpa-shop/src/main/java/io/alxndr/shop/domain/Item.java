@@ -18,6 +18,7 @@ public class Item {
 
     private Integer stockQuantity;
 
+    // 사실 그닥 필요없지만 연습삼아..
     @OneToMany(mappedBy = "item")
     private List<OrderItem> orderItems = new ArrayList<>();
 
