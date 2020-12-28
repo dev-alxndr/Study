@@ -7,6 +7,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.persistence.FetchType.LAZY;
+
 @Entity
 @Getter @Setter
 public class Member {
@@ -20,6 +22,6 @@ public class Member {
     @Embedded // 내장 타입
     private Address address;
 
-    @OneToMany(mappedBy = "member") // 나는 주인이 아니다. 읽기전용이다.
+    @OneToMany(mappedBy = "member", fetch = LAZY) // 나는 주인이 아니다. 읽기전용이다.
     private List<Order> orders = new ArrayList<>();
 }
