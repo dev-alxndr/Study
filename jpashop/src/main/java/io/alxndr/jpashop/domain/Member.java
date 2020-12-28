@@ -17,7 +17,7 @@ public class Member {
 
     private String name;
 
-    @EmbeddedId // 내장 타입
+    @Embedded // 내장 타입
     private Address address;
 
     @OneToMany(mappedBy = "member") // 나는 주인이 아니다. 읽기전용이다.
