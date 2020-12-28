@@ -20,6 +20,6 @@ public class Member {
     @EmbeddedId // 내장 타입
     private Address address;
 
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member") // 나는 주인이 아니다. 읽기전용이다.
     private List<Order> orders = new ArrayList<>();
 }
