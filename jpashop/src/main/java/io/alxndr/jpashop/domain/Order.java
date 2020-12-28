@@ -23,10 +23,13 @@ public class Order {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToMany(mappedBy = "order", fetch = LAZY)
+    /*
+    * cascade = order.getOrderItems.add(~~) -> order를 persist하면 OrderItem도 persist됨
+    * */
+    @OneToMany(mappedBy = "order", fetch = LAZY, cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>(); // 초기화 전략 중 Best Practice.
 
-    @OneToOne(fetch = LAZY)
+    @OneToOne(fetch = LAZY, cascade = CascadeType.ALL)  // Order 저장할 때 Delivery도 persist 해준다.
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
