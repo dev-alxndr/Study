@@ -1,6 +1,7 @@
 package io.alxndr.jpashop.domain.item;
 
 import io.alxndr.jpashop.domain.Category;
+import io.alxndr.jpashop.domain.CategoryItem;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @Getter @Setter
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)   // 하나의 테이블에 몰아서 넣는다.
 @DiscriminatorColumn
-public abstract class Item {
+public abstract class Item {    // 구현체 존재
 
     @Id @GeneratedValue
     @Column(name = "item_id")
@@ -24,6 +25,6 @@ public abstract class Item {
 
     private int stockQuantity;
 
-    @ManyToMany(mappedBy = "items")
-    private List<Category> categories = new ArrayList<>();
+    @OneToMany(mappedBy = "item")
+    private List<CategoryItem> categories = new ArrayList<>();
 }
