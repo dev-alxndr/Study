@@ -1,7 +1,7 @@
 package io.alxndr.jpashop.domain.item;
 
-import io.alxndr.jpashop.domain.Category;
 import io.alxndr.jpashop.domain.CategoryItem;
+import io.alxndr.jpashop.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,4 +29,25 @@ public abstract class Item {    // 구현체 존재
 
     @OneToMany(mappedBy = "item", fetch = LAZY)
     private List<CategoryItem> categories = new ArrayList<>();
+
+    /**
+     * 재고 수량 증가
+     * @param stockQuantity
+     */
+    public void addStock(int stockQuantity) {
+        this.stockQuantity += stockQuantity;
+    }
+
+    /**
+     * 재고 수량 감소
+     * @param stockQuantity
+     */
+    public void removeStock(int stockQuantity) {
+        int result = this.stockQuantity - stockQuantity;
+        if (result < 0) {
+            throw new NotEnoughStockException("need more stock");
+        }
+        this.stockQuantity = result;
+    }
+
 }
