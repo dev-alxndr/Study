@@ -1,6 +1,7 @@
 package io.alxndr.jpashop.repository;
 
 import io.alxndr.jpashop.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -13,10 +14,12 @@ import java.util.List;
 component scan을 통해 Bean으로 등록*
  */
 @Repository
+@RequiredArgsConstructor
 public class MemberRepository {
 
-    @PersistenceContext // 해당 어노테이션은 Spring을 주입받을 수 있음
-    private EntityManager em;
+//    @PersistenceContext // 해당 어노테이션은 Spring을 주입받을 수 있음
+    // -> @RequiredArgsConstructor 를 이용하여 생성자 주입을 받음
+    private final EntityManager em;
 
     public void save(Member member) {
         em.persist(member);

@@ -2,6 +2,7 @@ package io.alxndr.jpashop.service;
 
 import io.alxndr.jpashop.domain.Member;
 import io.alxndr.jpashop.repository.MemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,23 +18,34 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class MemberService {
 
-    @Autowired  // Field injection
-    private MemberRepository memberRepository;
+    // Field injection
+    private final MemberRepository memberRepository;
 
-    // 다양한 Bean 주입 방법
     /*
+    다양한 Bean 주입 방법
+
     * case 1 : setter 주입 방법
+    * -> 애플리케이션 실행시점에 변경해줄 일이 없기떄문에 case 2번이 더 좋다.
     *  @Autowired
     public void setMemberRepository(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
     *
+    * case 2: 생성자 주입방법
+    * -> 생성자가 하나만 존재하는 경우 @Autowired를 제외해줘도 주입해준다.
+    @Autowired
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+    *
+    * case 3: Lombok 활용
+    * @RequiredArgsConstructor -> final이 붙은 멤버 변수만 받는 생성자를 만들어줌
+    * private final MemberRepository memberRepository;
+    *
     * */
-
-
-
 
     /*
      회원가입
