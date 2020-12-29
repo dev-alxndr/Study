@@ -19,8 +19,21 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class MemberService {
 
-    @Autowired
+    @Autowired  // Field injection
     private MemberRepository memberRepository;
+
+    // 다양한 Bean 주입 방법
+    /*
+    * case 1 : setter 주입 방법
+    *  @Autowired
+    public void setMemberRepository(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+    *
+    * */
+
+
+
 
     /*
      회원가입
