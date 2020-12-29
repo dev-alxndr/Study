@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Transactional
+@Transactional  // Test에 있을경우 Rollback 발생
 public class MemberServiceTest {
 
     @Autowired
