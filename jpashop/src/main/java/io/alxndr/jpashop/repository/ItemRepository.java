@@ -19,6 +19,7 @@ public class ItemRepository {
             em.persist(item);   // 신규 등록
         } else {
             em.merge(item); // 이미 DB에 등록되어있으므로 update라고 이해한다.
+            // merge에 넘어온 item이 영속상태가 아니라 merge 후 리턴된 entity가 영속상태이다.
         }
     }
 

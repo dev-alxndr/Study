@@ -68,7 +68,6 @@ public class ItemController {
         itemService.saveItem(book);
 
         return "redirect:/items";
-
     }
 
 
