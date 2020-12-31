@@ -9,9 +9,12 @@ import io.alxndr.jpashop.domain.item.Item;
 import io.alxndr.jpashop.repository.ItemRepository;
 import io.alxndr.jpashop.repository.MemberRepository;
 import io.alxndr.jpashop.repository.OrderRepository;
+import io.alxndr.jpashop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -56,8 +59,8 @@ public class OrderService {
         findOrder.cancel();
     }
 
-    // 검색
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByCriteria(orderSearch);
+    }
 }
