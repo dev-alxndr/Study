@@ -50,4 +50,9 @@ public abstract class Item {    // 구현체 존재
         this.stockQuantity = result;
     }
 
+    public void changeProperties(String name, int price, int stockQuantity) {
+        this.name = name;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+    }
 }
