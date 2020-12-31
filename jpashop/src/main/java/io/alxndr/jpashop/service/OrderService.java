@@ -40,7 +40,7 @@ public class OrderService {
 
         /*
         주문 저장
-        Cascade Option을 ALL을 해줬기 때문에 Order만 Persist해도 포함된 Entity도 persist
+        Cascade Option을 ALL을 해줬기 때문에 Order만 Persist해도 포함된 Entity(OrderItem)도 persist
          */
         orderRepository.save(order);
         return order.getId();
