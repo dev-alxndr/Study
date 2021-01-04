@@ -25,6 +25,7 @@ public class MemberApiController {
     }
 
 
+    // DTO For Request Object
     @PostMapping("/api/v2/members")
     public CreateMemberResponse saveMemberV2(@RequestBody @Valid CreateMemberRequest request) {
         Member member = new Member();
