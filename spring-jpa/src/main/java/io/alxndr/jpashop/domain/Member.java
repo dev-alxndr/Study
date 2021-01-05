@@ -1,5 +1,6 @@
 package io.alxndr.jpashop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,6 +24,7 @@ public class Member {
     @Embedded // 내장 타입
     private Address address;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "member", fetch = LAZY) // 나는 주인이 아니다. 읽기전용이다.
     private List<Order> orders = new ArrayList<>();
 }
