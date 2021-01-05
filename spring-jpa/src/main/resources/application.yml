@@ -8,7 +8,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none  # CREATE : Application 실행 시점에 Table을 전부 지우고 재생성
+      ddl-auto: create  # CREATE : Application 실행 시점에 Table을 전부 지우고 재생성
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
