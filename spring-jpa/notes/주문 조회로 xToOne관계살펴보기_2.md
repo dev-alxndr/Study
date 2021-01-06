@@ -84,3 +84,48 @@ static class OrderItemDto {
 ```
 
 > OrderDto에서 OrderItemDto를 만들어서 Entity를 외부로 노출하지 않도록 주의한다.
+
+위와 같은 방식으로하면 SQL이 엄청 많이 나가게된다.
+
+Order -> Member, Delivery, OrderItems -> Item, Item
+Query가 실행된다.
+
+## 다음에 Fetch Join으로 최적화해보겠습니다.
+
+
+---
+# v3로 최적화하기 (feat.distinct)
+
+- OrderRepository.java
+```java
+public List<Order> findAllWithItem() {
+    return em.createQuery(
+            "select o from Order o " +
+            "join fetch o.member m " +
+            "join fetch o.delivery d " +
+            "join fetch o.orderItems oi " +
+            "join fetch oi.item", Order.class)
+        .getResultList();
+}
+```
+![img](./image/manyToOneJoin2.png)
+
+위 처럼 하게되면 데이터가 조인이 되면서 주문데이터가 2개로 늘어나게 된다. OneToMany를 Join할 때는 조심해야한다.
+
+
+- OrderRepository.java
+```java
+public List<Order> findAllWithItem() {
+    return em.createQuery(
+        "select distinct o from Order o " +
+                "join fetch o.member m " +
+                "join fetch o.delivery d " +
+                "join fetch o.orderItems oi " +
+                "join fetch oi.item", Order.class)
+        .getResultList();
+}
+```
+
+`distinct` 명령어로 중복되는 컬럼을 제거해줘야한다.
+
+> `distinct`는 실제 sql에 distinct를 해주고 같은 ID를 가진 Entity가 있다면 제거해준다.
