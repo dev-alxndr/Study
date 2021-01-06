@@ -1,4 +1,4 @@
-# 주문 조회로 xToOne 관계살펴보기_2.md
+# 주문 조회로 xToMany 관계살펴보기_2.md
 
 ## Collection(일대다) 조회 최적화 v2
 
@@ -129,3 +129,10 @@ public List<Order> findAllWithItem() {
 `distinct` 명령어로 중복되는 컬럼을 제거해줘야한다.
 
 > `distinct`는 실제 sql에 distinct를 해주고 같은 ID를 가진 Entity가 있다면 제거해준다.
+
+- 패치 조인으로 SQL이 1번만 실행됨
+- 1대다 조인이 있으므로 데이터베이스 row가 증가한다. 
+- order가 Collection 패치 조인 때문에 중복 조회 되는 것을 막아준다.
+
+### 단점..
+- __페이징이 불가하다..__

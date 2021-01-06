@@ -1,4 +1,4 @@
-# 주문 조회로 xToOne 관계살펴보기_1.md
+# 주문 조회로 xToMany 관계살펴보기_1.md
 
 ## Collection(일대다) 조회 최적화
 
