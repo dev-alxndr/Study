@@ -1,6 +1,6 @@
 # 간단한 주문 조회 v1: Entity를 직접노출   
 
-commit Point `24166ce`   
+Last commit Point `24166ce`   
 
 Entity를 외부로 노출하게되면 생기는 문제점과 해결법
 무한루프에 빠지게됨.
@@ -30,6 +30,8 @@ Hibernate5Module hibernate5Module() {
 ---
    
 # 간단한 주문 조회 v2: 엔티티를 DTO로 변환
+
+Start Commit `a8dd726`
 
 Inner Class로 DTO를 만들어준다.
 ```java
@@ -63,5 +65,7 @@ public List<SimpleOrderDto> ordersV2() {
 Entity를 Stream을 활용해서 SimpleOrderDto로 변환하여 Return한다.
 
 
-v1, v2가 가지는 문제점
+### v1, v2가 가지는 문제점
 - Lazy Loading으로 인한 쿼리 조회가 너무 많음.
+    - 주문 한개당 총 3번(회원, 주문, 배송) 쿼리 발생
+    - 100명이면 100 * 3번의 쿼리 발생 (n + 1) 문제 ..(내 생각도 1+n이라고 칭하는게 맞지않을까?..)
