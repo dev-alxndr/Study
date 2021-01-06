@@ -3,7 +3,7 @@
 Last commit Point `24166ce`   
 
 Entity를 외부로 노출하게되면 생기는 문제점과 해결법
-무한루프에 빠지게됨.
+무한루프에 빠지게됨. 
 - 양방향 맵핑시 한곳에는 @JsonIgnore해줘야함
 - `HttpMessageConversionException: Type definition error` 발생
      1. `Order` -> `Member`는 지연로딩이기때문에 프록시 객체임
