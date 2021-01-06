@@ -23,6 +23,7 @@ public class OrderSimpleApiController {
     private final OrderRepository orderRepository;
 
     /**
+     * Entity를 외부로 노출하게되면 생기는 문제점과 해결법
      * 무한루프에 빠지게됨.
      *
      * 1. 양방향 맵핑시 한곳에는 @JsonIgnore해줘야함
@@ -30,8 +31,8 @@ public class OrderSimpleApiController {
      *      1. Order -> Member는 지연로딩이기때문에 프록시 객체임
      *      2. Jackson은 프록시 객체를 변환하지 못함.
      * 3. Hibernate5Module로 해결할 수 있지만 Lazy Loading은 Null로 나오게됨
+     * 4. hibernate5Module.configure(Hibernate5Module.Feature.FORCE_LAZY_LOADING, true) 이렇게해서 강제 로딩할 수 있음 (비추천)
      */
-
     @GetMapping("/api/v1/simple-orders")
     public List<Order> ordersV1() {
         List<Order> all = orderRepository.findAllByCriteria(new OrderSearch());
