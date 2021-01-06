@@ -11,9 +11,10 @@ spring:
       ddl-auto: create  # CREATE : Application 실행 시점에 Table을 전부 지우고 재생성
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
+#        dialect: org.hibernate.dialect.H2Dialect
 #        show_sql: true  # System out
         format_sql: true
+        default_batch_fetch_size: 100
 
 logging:
   level:
