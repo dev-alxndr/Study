@@ -5,10 +5,10 @@ Last commit Point `24166ce`
 Entity를 외부로 노출하게되면 생기는 문제점과 해결법
 무한루프에 빠지게됨.
 - 양방향 맵핑시 한곳에는 @JsonIgnore해줘야함
-- HttpMessageConversionException: Type definition error 발생
-     1. Order -> Member는 지연로딩이기때문에 프록시 객체임
-     2. Jackson은 프록시 객체를 변환하지 못함.
-- Hibernate5Module로 해결할 수 있지만 Lazy Loading은 Null로 나오게됨
+- `HttpMessageConversionException: Type definition error` 발생
+     1. `Order` -> `Member`는 지연로딩이기때문에 프록시 객체임
+     2. `Jackson`은 프록시 객체를 변환하지 못함.
+- `Hibernate5Module`로 해결할 수 있지만 `Lazy Loading`은 Null로 나오게됨
 - hibernate5Module.configure(Hibernate5Module.Feature.FORCE_LAZY_LOADING, true) 이렇게해서 강제 로딩할 수 있음 (비추천)
 
 
@@ -70,12 +70,13 @@ Entity를 Stream을 활용해서 SimpleOrderDto로 변환하여 Return한다.
     - 주문 한개당 총 3번(회원, 주문, 배송) 쿼리 발생
     - 100명이면 100 * 3번의 쿼리 발생 (n + 1) 문제 ..(내 생각도 1+n이라고 칭하는게 맞지않을까?..)   
 
-order 조회 1번   
-order -> member 지연로딩 조회 N번   
-order -> delivery 지연로딩 조회 N번   
-예) order의 결과가 2개면 1 + 2 + 2번 실행된다 (최악의 경우)
+> order 조회 1번   
+> order -> member 지연로딩 조회 N번   
+> order -> delivery 지연로딩 조회 N번   
+> 예) order의 결과가 2개면 1 + 2 + 2번 실행된다 (최악의 경우)
 
-* 만약 2개의 주문을 같은 회원이 주문했다면 Member객체는 한번만 실행된다. -> 영속성컨텍스트를 체크를 하기 때문에 같은 Member는 한번만 실행된다.
+* 만약 2개의 주문을 같은 회원이 주문했다면 Member객체는 한번만 실행된다.   
+-> 영속성컨텍스트를 체크를 하기 때문에 같은 Member는 한번만 실행된다.
 
 ---
 ### 다음으로는 N+1문제를 `fetch join`으로 해결하겠습니다.
@@ -83,7 +84,7 @@ order -> delivery 지연로딩 조회 N번
 
 # 간단한 주문 조회 V3: 엔티티를 DTO로 변환 - 페치 조인 최적화
 
-`08f8eac`
+commit `08f8eac`
 
 #### 기존의 N+1문제를 Fetch join으로 해결하기
 - OrderRepository.class
