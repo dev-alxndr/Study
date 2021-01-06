@@ -29,7 +29,7 @@ public class OrderSimpleApiController {
      * 2. HttpMessageConversionException: Type definition error 발생
      *      1. Order -> Member는 지연로딩이기때문에 프록시 객체임
      *      2. Jackson은 프록시 객체를 변환하지 못함.
-     *
+     * 3. Hibernate5Module로 해결할 수 있지만 Lazy Loading은 Null로 나오게됨
      */
 
     @GetMapping("/api/v1/simple-orders")
