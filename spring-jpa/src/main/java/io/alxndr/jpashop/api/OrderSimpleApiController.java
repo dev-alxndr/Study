@@ -63,6 +63,19 @@ public class OrderSimpleApiController {
                 .collect(Collectors.toList());
     }
 
+
+    /*
+    * V2와 결과는 같지만 쿼리실행이 달라진다.
+    * */
+    @GetMapping("/api/v3/simple-orders")
+    public List<SimpleOrderDto> ordersV3() {
+        List<Order> list = orderRepository.findAllWithMemberAndDelivery();
+        return list.stream()
+                .map(SimpleOrderDto::new)
+                .collect(Collectors.toList());
+    }
+
+
     @Data
     private static class SimpleOrderDto {
         private Long orderId;

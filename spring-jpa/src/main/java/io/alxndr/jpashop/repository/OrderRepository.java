@@ -71,5 +71,14 @@ public class OrderRepository {
         return tq.getResultList();
     }
 
+    /*
+    * Fetch Join으로 N+1 문제 해결
+    * */
+    public List<Order> findAllWithMemberAndDelivery() {
+        return em.createQuery("select o from Order o " +
+                    "join fetch o.member m " +
+                    "join fetch o.delivery d", Order.class)
+                .getResultList();
+    }
 
 }
