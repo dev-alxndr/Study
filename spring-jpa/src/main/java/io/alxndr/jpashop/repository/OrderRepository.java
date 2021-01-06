@@ -3,7 +3,6 @@ package io.alxndr.jpashop.repository;
 import io.alxndr.jpashop.domain.Order;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.EntityManager;
@@ -81,4 +80,14 @@ public class OrderRepository {
                 .getResultList();
     }
 
+    /*
+    * return as DTO
+    * */
+    public List<OrderSimpleQueryDto> findOrderDtos() {
+        return em.createQuery("select new io.alxndr.jpashop.repository.OrderSimpleQueryDto(o.id, o.member.name, o.orderDate, o.status, o.delivery.address) " +
+                    "from Order o " +
+                    "join o.member m " +
+                    "join o.delivery d ", OrderSimpleQueryDto.class)
+                .getResultList();
+    }
 }
