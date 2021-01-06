@@ -53,6 +53,10 @@ public class OrderSimpleApiController {
 
     @GetMapping("/api/v2/simple-orders")
     public List<SimpleOrderDto> ordersV2() {
+        /*
+        * Order 2개
+        * N + 1 -> 1 + 회원 N + 배송 N
+        * */
         List<Order> orders = orderRepository.findAllByCriteria(new OrderSearch());
         return orders.stream()
                 .map(SimpleOrderDto::new)
