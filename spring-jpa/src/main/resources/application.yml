@@ -15,6 +15,7 @@ spring:
 #        show_sql: true  # System out
         format_sql: true
         default_batch_fetch_size: 100
+    open-in-view: true # false  / defualt = true
 
 logging:
   level:
