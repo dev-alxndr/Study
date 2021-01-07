@@ -49,3 +49,65 @@ private List<OrderQueryDto> findOrders() {
 ---
 
 # JPA에서 DTO 직접 조회 - Collection 최적화
+
+`ed07a74`
+
+- OrderApiController.java   
+```java
+@GetMapping("/api/v5/orders")
+public List<OrderQueryDto> ordersV5() {
+    return orderQueryRepository.findAllByDto_optimization();
+}
+```
+
+- OrderQueryRepository.java
+```java
+public List<OrderQueryDto> findAllByDto_optimization() {
+    List<OrderQueryDto> orders = findOrders();
+
+    List<Long> orderIds = toOrderIds(orders);
+
+    List<OrderItemQueryDto> orderItems = getOrderItems(orderIds);   // in절로 한번에 조회
+
+    Map<Long, List<OrderItemQueryDto>> orderItemMap = orderItems.stream()
+            .collect(Collectors.groupingBy(OrderItemQueryDto::getOrderId));     // List를 Map으로 변환
+
+    orders.forEach(o -> o.setOrderItems(orderItemMap.get(o.getOrderId())));
+
+    return orders;
+}
+
+
+private List<Long> toOrderIds(List<OrderQueryDto> orders) {
+    List<Long> orderIds = orders.stream()
+            .map(o -> o.getOrderId())
+            .collect(Collectors.toList());  // 주문에서 OrderId를 뽑아서 collect
+    return orderIds;
+}
+
+
+private List<OrderItemQueryDto> getOrderItems(List<Long> orderIds) {
+    return em.createQuery("select new io.alxndr.jpashop.repository.order.query.OrderItemQueryDto(oi.order.id, i.name, oi.orderPrice, oi.count) from OrderItem oi " +
+            "join oi.item i " +
+            "where oi.order.id in :orderIds", OrderItemQueryDto.class)
+            .setParameter("orderIds", orderIds)
+            .getResultList();
+}
+```
+
+V4와의 차이점은 가져온 Orders를 `toOrderIds()`에서 loop돌며 Id만 List에 담아서 리턴하고 `getOrderItems()`에서 orderIds를 `IN절`로 여러 개의 주문에 해당하는 상품을 검색한다.   
+그 다음 
+```java
+orderItems.stream()
+        .collect(Collectors.groupingBy(OrderItemQueryDto::getOrderId));
+```
+`List`를 `Map`으로 바꿔준다.   
+
+다음 orders를 `forEach` 돌면서 `Map`에서 id값으로 키를 찾아서 set해준다.
+
+### 정리
+- Query : Order 1번, 컬렉션 1번
+
+#### v6는 제외. 너무 복잡해짐
+- 쿼리는 한번이지만 중복이 늘어나기때문에 v5보다 느려질 수 있음.
+- 페이징 불가능 (이것만해도 안할 이유..)
