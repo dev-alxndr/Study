@@ -14,18 +14,27 @@ public class OrderQueryRepository {
 
 
     public List<OrderQueryDto> findOrderQueryDtos() {
-        List<OrderQueryDto> orders = findOrders();
+        List<OrderQueryDto> orders = findOrders(); // Query 1번
 
         orders.forEach(o -> {
-
+            List<OrderItemQueryDto> orderItems = findOrderItems(o.getOrderId()); // Query N번
+            o.setOrderItems(orderItems);
         });
-        return null;
+        return orders;
+    }
+
+    private List<OrderItemQueryDto> findOrderItems(Long orderId) {
+        return em.createQuery("select new io.alxndr.jpashop.repository.order.query.OrderItemQueryDto(oi.order.id, i.name, oi.orderPrice, oi.count) from OrderItem oi " +
+                    "join oi.item i " +
+                    "where oi.order.id = :orderId", OrderItemQueryDto.class)
+                .setParameter("orderId", orderId)
+                .getResultList();
     }
 
     private List<OrderQueryDto> findOrders() {
-        em.createQuery("select new io.alxndr.jpashop.repository.order.query.OrderQueryDto(o.id, m.name, o.orderDate, o.status, d.address) from Order o " +
-                "join o.member m " +
-                "join o.delivery d", OrderQueryDto.class)
+        return em.createQuery("select new io.alxndr.jpashop.repository.order.query.OrderQueryDto(o.id, m.name, o.orderDate, o.status, d.address) from Order o " +
+                    "join o.member m " +
+                    "join o.delivery d", OrderQueryDto.class)
                 .getResultList();
     }
 }
