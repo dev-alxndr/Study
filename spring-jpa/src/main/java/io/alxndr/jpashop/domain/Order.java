@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -29,6 +30,7 @@ public class Order {
     /*
     * cascade = order.getOrderItems.add(~~) -> order를 persist하면 OrderItem도 persist됨
     * */
+//    @BatchSize(size = 100)
     @OneToMany(mappedBy = "order", fetch = LAZY, cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>(); // 초기화 전략 중 Best Practice.
 

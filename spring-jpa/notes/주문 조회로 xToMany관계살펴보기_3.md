@@ -15,6 +15,23 @@
     - `@BatchSize`  개별 세팅
 
 
+```java
+@BatchSize(size = 100)  // solution 1
+@OneToMany(mappedBy = "order", fetch = LAZY, cascade = CascadeType.ALL)
+private List<OrderItem> orderItems = new ArrayList<>(); // 초기화 전략 중 Best Practice.
+```
+- application.yml
+```yml
+spring:
+    jpa:
+        properties:
+            hibernate:
+                default_batch_fetch_size: 100
+```
+
+
+### 예제
+
 - OrderApiController.java
 ```java
 // Collection 조회 한계 돌파
@@ -161,3 +178,14 @@ where
 in의 들어갈 갯수는 위 yml에 설정한 수 만큼 들어간다.
 
 > 1 + N + M 쿼리가 실행되던게 1 + 1 + 1 쿼리로 바뀌었다.
+
+
+## 정리
+### 장점
+- 쿼리 호출 수가 `1+N` -> `1+1`로 최적화 된다.
+- 조인보다 DB데이터 전송량이 최적화 된다.
+- 패치 조인 방식과 비교해서 쿼리 호출 수가 약간 증가하지만, DB전송량이 감소한다.
+- 컬렉션 패치조인은 페이징이 불가능하지만 이 방법은 페이징이 가능하다.
+
+### 참고
+> `default_batch_fetch_size`의 크기는 100~1000사이를 권장
