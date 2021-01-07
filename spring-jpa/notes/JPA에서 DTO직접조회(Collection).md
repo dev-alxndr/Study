@@ -1,6 +1,6 @@
 # JPA에서 DTO로 직접 반환 (Collection)
 
-`521fec7`
+`37e7f9b`
 
 ### oneToMany 관계 DTO 변환
 - OrderApiController.java
@@ -44,7 +44,7 @@ private List<OrderQueryDto> findOrders() {
 > `findOrderQueryDtos()` 에서 주문을 가져온 후 loop를 돌면서   
 > orderId에 해당하는 OrderItem을 찾아서 set해주게 됩니다.
 
-결과적으로 주문1개 주문상품이 2개가 있다면 `1+2` 번의 쿼리가 실행됩니다.
+결과적으로 주문10개라면 있다면 `1+10` 번의 쿼리가 실행됩니다.
 
 ---
 
