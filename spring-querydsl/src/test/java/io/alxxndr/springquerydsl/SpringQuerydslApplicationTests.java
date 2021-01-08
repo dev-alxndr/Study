@@ -22,7 +22,8 @@ class SpringQuerydslApplicationTests {
         em.persist(hello);
 
         JPAQueryFactory query = new JPAQueryFactory(em);
-        QHello qHello = new QHello("h");
+//        QHello qHello = new QHello("h");      // 1번 방법
+        QHello qHello = QHello.hello;           // 2번 방법
 
         Hello result = query.selectFrom(qHello)
                 .fetchOne();
