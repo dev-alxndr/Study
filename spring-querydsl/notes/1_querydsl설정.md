@@ -1,3 +1,7 @@
+# Querydsl 설정
+
+- build.gradle
+```gradle
 plugins {
     id 'org.springframework.boot' version '2.4.1'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
@@ -38,7 +42,7 @@ test {
 }
 
 //querydsl 추가 시작
-def querydslDir = "$buildDir/generated/querydsl"    // Source Folder 설정
+def querydslDir = "$buildDir/generated/querydsl"
 querydsl {
     jpa = true
     querydslSourcesDir = querydslDir
@@ -53,3 +57,10 @@ compileQuerydsl {
 }
 
 //querydsl 추가 끝
+```
+
+- Compile Querydsl   
+![gradle compileQuerydsl](./images/bulid_querydsl.png)
+
+- QType Class 확인   
+![](./images/qtype.png)
