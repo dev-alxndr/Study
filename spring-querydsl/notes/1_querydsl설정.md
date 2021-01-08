@@ -115,3 +115,6 @@ class SpringQuerydslApplicationTests {
 ```
 
 #### 실행 후 정상 작동 확인 `ed42380`
+
+[querydsl](http://www.querydsl.com/)   
+[AssertJ](https://assertj.github.io/doc/)
