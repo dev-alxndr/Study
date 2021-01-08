@@ -1,5 +1,7 @@
 # Querydsl 설정
 
+`85c953a`
+
 - build.gradle
 ```gradle
 plugins {
@@ -64,3 +66,50 @@ compileQuerydsl {
 
 - QType Class 확인   
 ![](./images/qtype.png)
+
+
+- 기본으로 만들어주는 Test Class에서 설정 제대로 되었나 확인
+간단한 Entity 생성
+- `Hello.java`
+```java
+import lombok.Getter;
+import lombok.Setter;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+@Getter @Setter
+public class Hello {
+
+    @Id @GeneratedValue
+    private Long id;
+}
+```
+
+- `SpringQuerydslApplicationTests.java`
+```java
+@SpringBootTest
+@Transactional
+class SpringQuerydslApplicationTests {
+
+    @Autowired
+    EntityManager em;
+
+    @Test
+    void contextLoads() {
+        Hello hello = new Hello();
+        em.persist(hello);
+
+        JPAQueryFactory query = new JPAQueryFactory(em);
+        QHello qHello = new QHello("h");
+
+        Hello result = query.selectFrom(qHello)
+                .fetchOne();
+
+        Assertions.assertThat(result).isEqualTo(hello);
+        Assertions.assertThat(result.getId()).isEqualTo(hello.getId());
+    }
+
+}
+```
