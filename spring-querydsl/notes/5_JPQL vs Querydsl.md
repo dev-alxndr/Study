@@ -1,6 +1,8 @@
 # JPQL vs Querydsl
 
-앞에서 만든 Entity로 QType 생성
+`ad0e9f0`
+
+앞에서 만든 Entity로 QType 생성     
 ![img](./images/bulid_querydsl.png)
 
 
