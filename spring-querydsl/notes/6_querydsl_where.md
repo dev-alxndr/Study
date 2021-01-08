@@ -1,6 +1,7 @@
 # 검색 조건
+`02ec24e`  
 
-새로운 테스트 추가
+### 새로운 테스트 추가
 ```java
 @Test
 public void search() throws Exception {
@@ -17,6 +18,8 @@ public void search() throws Exception {
 > where(안에서 .and() 대신 ,(comma)로 넣으면 같은 기능을 한다.)   
 `.where(member.username.eq("member1"),member.age.eq(10))`
 
+
+### 다양한 검색 조건
 ``` java
 member.username.eq("member1") // username = 'member1'   
 member.username.ne("member1") //username != 'member1'  
