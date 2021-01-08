@@ -1,4 +1,4 @@
-package io.alxxndr.springquerydsl;
+package io.alxndr.springquerydsl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

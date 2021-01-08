@@ -1,4 +1,4 @@
-package io.alxxndr.springquerydsl;
+package io.alxndr.springquerydsl;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.assertj.core.api.Assertions;

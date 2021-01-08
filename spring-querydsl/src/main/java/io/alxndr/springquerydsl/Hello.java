@@ -1,4 +1,4 @@
-package io.alxxndr.springquerydsl;
+package io.alxndr.springquerydsl;
 
 import lombok.Getter;
 import lombok.Setter;
