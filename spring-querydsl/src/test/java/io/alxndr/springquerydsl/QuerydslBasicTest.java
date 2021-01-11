@@ -2,7 +2,9 @@ package io.alxndr.springquerydsl;
 
 import com.querydsl.core.QueryResults;
 import com.querydsl.core.Tuple;
+import com.querydsl.core.types.Expression;
 import com.querydsl.core.types.dsl.CaseBuilder;
+import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.JPAExpressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.junit.jupiter.api.BeforeEach;
@@ -441,5 +443,17 @@ public class QuerydslBasicTest {
         }
     }
 
+
+    @Test
+    public void constant() throws Exception {
+        List<Tuple> result = queryFactory
+                .select(member, Expressions.constant("A"))
+                .from(member)
+                .fetch();
+
+        for (Tuple tuple : result) {
+            System.out.println("tuple = " + tuple);
+        }
+    }
 
 }
