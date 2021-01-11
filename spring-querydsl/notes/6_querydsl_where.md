@@ -36,3 +36,54 @@ member.username.like("member%") //like 검색
 member.username.contains("member") // like ‘%member%’ 검색 
 member.username.startsWith("member") //like ‘member%’ 검색
 ```
+---
+# 결과 조회
+
+- 단순 리스트 조회
+```java
+List<Member> fetch = queryFactory
+        .selectFrom(member)
+        .fetch();
+
+```
+- 1개 조회
+   - 결과가 2개이상이면 `NonUniqueResultException`
+```java
+Member member1 = queryFactory
+        .selectFrom(QMember.member)
+        .fetchOne();
+```
+- Limit 1
+```java
+Member member2 = queryFactory
+        .selectFrom(QMember.member)
+        .fetchFirst();
+```
+
+- Paging
+```java
+QueryResults<Member> results = queryFactory
+        .selectFrom(member)
+        .fetchResults();
+long total = results.getTotal();
+List<Member> content = results.getResults();
+```
+`results.getTotal()` : 리스트 카운트  
+```sql
+select
+count(member0_.member_id) as col_0_0_ 
+from
+member member0_
+```
+`results.getResults()` : content 데이터
+```sql
+select
+member0_.member_id as member_i1_1_,
+member0_.age as age2_1_,
+member0_.team_id as team_id4_1_,
+member0_.username as username3_1_ 
+from
+member member0_
+```
+> 불필요한 카윤트쿼리를 성능을 위해서 따로 만들어서 날리는 경우도 있음
+

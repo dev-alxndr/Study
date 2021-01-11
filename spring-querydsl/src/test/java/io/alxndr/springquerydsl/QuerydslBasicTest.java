@@ -96,9 +96,10 @@ public class QuerydslBasicTest {
                 .fetch();
 
         // First
-        Member member1 = queryFactory
-                .selectFrom(QMember.member)
-                .fetchOne();
+//        Member member1 = queryFactory
+//                .selectFrom(QMember.member)
+//                .fetchOne();
+        // -> 결과가 2개 이상이면 NonUniqueResultException
 
         // limit 1
         Member member2 = queryFactory
@@ -106,16 +107,12 @@ public class QuerydslBasicTest {
                 .fetchFirst();
 
         // Paging
+
         QueryResults<Member> results = queryFactory
                 .selectFrom(member)
                 .fetchResults();
         long total = results.getTotal();
         List<Member> content = results.getResults();
-
-
-        // when
-
-        // then
     }
 
 }
