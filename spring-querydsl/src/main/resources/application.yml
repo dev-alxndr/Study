@@ -10,7 +10,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-#        use_sql_comment: true
+        use_sql_comment: true
 logging:
   level:
     org.hibernate.SQL: debug
