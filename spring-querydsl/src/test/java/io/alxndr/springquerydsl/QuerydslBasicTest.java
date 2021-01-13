@@ -3,8 +3,9 @@ package io.alxndr.springquerydsl;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.QueryResults;
 import com.querydsl.core.Tuple;
-import com.querydsl.core.types.Expression;
+import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.Projections;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.core.types.dsl.CaseBuilder;
 import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.JPAExpressions;
@@ -12,7 +13,6 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import io.alxndr.springquerydsl.dto.MemberDto;
 import io.alxndr.springquerydsl.dto.QMemberDto;
 import io.alxndr.springquerydsl.dto.UserDto;
-import org.h2.engine.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -646,5 +646,34 @@ public class QuerydslBasicTest {
 
     }
 
+
+    @Test
+    public void dynamicQueryWhereParam() {
+        String usernameParam = "member1";
+        Integer ageParam = null;
+
+        List<Member> result = searchMember2(usernameParam, ageParam);
+    }
+
+    private List<Member> searchMember2(String usernameCond, Integer ageCond) {
+        return queryFactory
+                .selectFrom(member)
+                .where(usernameEq(usernameCond), ageEq(ageCond))
+                .fetch();
+    }
+
+    // 간단한 조건은 삼항연산자
+    private BooleanExpression ageEq(Integer ageCond) {
+        return ageCond != null ? member.age.eq(ageCond) : null;
+
+    }
+
+    private BooleanExpression usernameEq(String usernameCond) {
+        return usernameCond != null ? member.username.eq(usernameCond) : null;
+    }
+
+    private BooleanExpression allEq(String usernameEq, Integer ageCond) {
+        return usernameEq(usernameEq).and(ageEq(ageCond));
+    }
 
 }
