@@ -9,6 +9,7 @@ import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.JPAExpressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import io.alxndr.springquerydsl.dto.MemberDto;
+import io.alxndr.springquerydsl.dto.QMemberDto;
 import io.alxndr.springquerydsl.dto.UserDto;
 import org.h2.engine.User;
 import org.junit.jupiter.api.BeforeEach;
@@ -599,6 +600,19 @@ public class QuerydslBasicTest {
             System.out.println("userDto = " + userDto);
         }
     }
+
+
+    @Test
+    public void findByQuerydslProjection() throws Exception {
+        List<MemberDto> result = queryFactory.select(new QMemberDto(member.username, member.age))
+                .from(member)
+                .fetch();
+
+        for (MemberDto memberDto : result) {
+            System.out.println("memberDto = " + memberDto);
+        }
+    }
+
 
 
 }
