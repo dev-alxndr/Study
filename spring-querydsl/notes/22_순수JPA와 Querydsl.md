@@ -1,5 +1,7 @@
 # 순수 JPA와 Querydsl
 
+`bcac382`   
+
 그동안 Test코드에서 작성하던 
 코드를 Repository에 작성해보도록하겠습니다.
 
