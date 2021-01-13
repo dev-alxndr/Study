@@ -1,5 +1,6 @@
 package io.alxndr.springquerydsl;
 
+import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.QueryResults;
 import com.querydsl.core.Tuple;
 import com.querydsl.core.types.Expression;
@@ -613,6 +614,37 @@ public class QuerydslBasicTest {
         }
     }
 
+
+    /**
+     * ===================================
+     * ==========DYNAMIC QUERY===========
+     */
+    @Test
+    public void dynamicQueryBooleanBuilder() throws Exception {
+        String usernameParam = "member1";
+        Integer ageParam = null;
+
+        List<Member> result = searchMember1(usernameParam, ageParam);
+    }
+
+    // Null이 아닌 조건만 검색
+    private List<Member> searchMember1(String usernameCond, Integer ageCond) {
+
+        BooleanBuilder builder = new BooleanBuilder();
+        if (usernameCond != null) {
+            builder.and(member.username.eq(usernameCond));
+        }
+
+        if (ageCond != null) {
+            builder.and(member.age.eq(ageCond));
+        }
+
+        return queryFactory
+                .selectFrom(member)
+                .where(builder)
+                .fetch();
+
+    }
 
 
 }
