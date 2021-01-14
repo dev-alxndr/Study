@@ -1,5 +1,7 @@
 # Querydsl Dynamic Query (Where)
 
+`f64671d`
+
 이전에 본 `BooleanBuilder`와 다른 방식
 
 - MemberJpaRepository.java
@@ -41,7 +43,7 @@ private BooleanExpression usernameEq(String username) {
 
 #### 장점
 - BooleanBuilder를 사용하는것보다 재사용성이 좋다.
-- 각각의 조건을 조합할 수 있다.
+- 각각의 조건을 조합할 수 있다. **NULL 조심**
 ```java
 private BooleanExpression usernameAndTeamNameEq(String username, String teamName) {
     return usernameEq(username).and(teamNameEq(teamName));
