@@ -128,4 +128,8 @@ public class MemberJpaRepository {
         return hasText(username) ? member.username.eq(username) : null;
     }
 
+    private BooleanExpression usernameAndTeamNameEq(String username, String teamName) {
+        return usernameEq(username).and(teamNameEq(teamName));
+    }
+
 }
