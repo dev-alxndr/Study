@@ -34,5 +34,4 @@ public class MemberController {
     public Page<MemberTeamDto> searchMEmbersV3(MemberSearchCondition condition, Pageable pageable) {
         return memberRepository.searchWithPageComplex(condition, pageable);
     }
-
 }
