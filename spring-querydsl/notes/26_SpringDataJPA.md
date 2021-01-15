@@ -9,7 +9,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
 ## 사용자 정의 레포지토리
 
-![img](./images/custom_repository.png)
+![img](./images/custom_repository.png) - 출처: [Querydsl-실전](https://www.inflearn.com/course/Querydsl-%EC%8B%A4%EC%A0%84)
 
 새로운 interface를 만든다. (이름은 크게 상관없다.)
 - MemberRepositoryCustom.java
