@@ -1,0 +1,17 @@
+{
+  "name": "react-nodebird-front",
+  "version": "1.0.0",
+  "description": "Study For React",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "author": "Alexander Choi",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.5.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  }
+}
