@@ -24,3 +24,13 @@ npx babel --watch src --out-dir . --presets @babel/preset-react
     - js에서 css, json 텍스트파일 등을 일반 모듈처럼 불러오기
     - 환경 변수 주입
 - 가장 큰 이유 = 모듈 시스템 (ESM, commonJS)을 사용하고 싶어서
+
+
+# Create-react-app
+
+```bash
+npx create-react-app cra-test
+```
+
+cra vs next.js
+-> 서버사이드 렌더링여부
