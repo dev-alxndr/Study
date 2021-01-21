@@ -30,7 +30,7 @@ npx babel --watch src --out-dir . --presets @babel/preset-react
 
 ```bash
 npx create-react-app cra-test
-```
+```ㄴ
 
 cra vs next.js
 -> 서버사이드 렌더링여부
