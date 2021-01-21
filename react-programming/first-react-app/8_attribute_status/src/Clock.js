@@ -13,7 +13,7 @@ export default function Clock() {
     // Component의 key를 변경하면 삭제되었다가 다시 랜더링됨 그것을 unmount 추가되는것을 mount
     return (
         <div>
-            <Counterr key={seconds}/>
+            <Counterr/>
             <h1 style={{color: seconds%2 ? 'red' : 'blue'}}>Hello</h1>
             <h2>It's been {seconds} so far.</h2>
         </div>
