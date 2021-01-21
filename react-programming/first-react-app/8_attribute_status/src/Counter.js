@@ -9,7 +9,7 @@ export default function Counter() {
 
     return (
         <div>
-            <Title title={`현재카운트: ${count.value}`}></Title>
+            {count.value > 0 && <Title title={`현재카운트: ${count.value}`}></Title>}
             <button onClick={onClick}>INCREASE</button>
         </div>
     )
