@@ -48,3 +48,6 @@ function Title({title}) {
 
 export default React.memo(Title);
 ```
+
+속성변수는 불변변수
+상태값은 변수
