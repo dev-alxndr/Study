@@ -34,3 +34,17 @@ npx create-react-app cra-test
 
 cra vs next.js
 -> 서버사이드 렌더링여부
+
+
+
+부모가 렌더링되면 자식도 렌더링된다.
+그렇게 안할려면 React.memo 를 사용하자.
+```js
+import React from 'react';
+
+function Title({title}) {
+    return <p>{title}</p>
+};
+
+export default React.memo(Title);
+```
