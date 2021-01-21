@@ -1,12 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import useUser from "./useUser";
 
 export default function Profile({userId}) {
-    const [user, setUser] = useState(null);
-    useEffect(() => {
-        getUserApi(userId).then(data => setUser(data));
-    }, [userId]);
-    // 배열은 의존성배열이라한다. 배열이 변경될때만 부수효과함수가 실행된다.
-    // 의존성배열에대해 주의할것
+    const user = useUser(userId);
 
     return (
         <div>
@@ -21,11 +17,4 @@ export default function Profile({userId}) {
     );
 }
 
-const USER1 = { name: 'alxndr', age: 27};
-const USER2 = { name: 'suyeon', age: 22};
 
-function getUserApi(userId) {
-    return new Promise(res => {
-        res(userId % 2 ? USER1 : USER2);
-    }, 500);
-}
