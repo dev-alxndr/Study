@@ -20,7 +20,7 @@ export default function useMoveTile({ tileList, setTileList }) {
     function moveLeft(){
         moveAndAdd({x: -1, y: 0})
     };
-    function moveRight(){
+    function moveRight(){ 
         moveAndAdd({x: 1, y: 0})
     };
 
