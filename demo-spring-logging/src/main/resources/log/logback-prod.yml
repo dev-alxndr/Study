@@ -1,0 +1,5 @@
+log:
+  config:
+    path: ../logs
+    filename: prod_log
+    err_filename: prod_err_log

@@ -1,0 +1,5 @@
+log:
+  config:
+    path: ../logs
+    filename: dev_log
+    err_filename: dev_err_log
