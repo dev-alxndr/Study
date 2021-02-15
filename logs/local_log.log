@@ -267,3 +267,4 @@ ERROR in ch.qos.logback.core.pattern.parser.Compiler@47605f2f - [wEx] is not a v
 2021-01-27 16:47:10.882  INFO 38069 --- [http-nio-8080-exec-2] i.a.demospringlogging.IndexController    : INFO LEVEL TEST
 2021-01-27 16:47:10.883  WARN 38069 --- [http-nio-8080-exec-2] i.a.demospringlogging.IndexController    : WARN LEVEL TEST
 2021-01-27 16:47:10.883 ERROR 38069 --- [http-nio-8080-exec-2] i.a.demospringlogging.IndexController    : ERROR LEVEL TEST
+2021-01-27 16:56:21.174  INFO 38069 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
