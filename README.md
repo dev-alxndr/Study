@@ -1,4 +1,4 @@
-
+# About Projects
 
 ## How to
 여러가지 ~~하는방법에 대해 정리 
@@ -36,9 +36,6 @@ Multi Module 실습 프로젝트
 - Web (Front)
 - Admin
 
-## ~~Demo-spring-mvc (DEPRECATED)~~
-인프런 백기선님 강의 실습 프로젝트 
-
 ## Demo-spring-redis
 Spring Redis Project
 
@@ -53,3 +50,34 @@ Spring Redis Project
 
 ## Inflearn-spring-security (...ing)
 인프런 백기선님 강의 실습 프로젝트 
+
+## Java 8
+인프런 백기선님 강의 실습 프로젝트   
+Java 8 주요 특징 학습
+
+## Jpa-ex1
+순수 JPA 학습
+참고 : 인프런 김영한님 강의
+
+## Project Improvement
+
+
+## React-nodebird
+React 학습 프로젝트   
+참고 : 인프런 강의
+
+## Spring-jpa
+Spring JPA 실습 프로젝트
+- notes 폴더에 정리된 문서 참고  
+
+참고 : 인프런 김영한님 강의
+
+## Spring-querydsl
+Spring Querydsl 실습 프로젝트
+- notes 폴더 문서 참고
+
+참고 : 인프런 김영한님 강의
+
+## tailwind-example
+Bootstrap외의 프론트 css 프레임워크   
+적용 방법이 궁금해서 실습해본 프로젝트
