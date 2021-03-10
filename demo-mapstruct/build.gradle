@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+ext {
+    mapstructVersion = '1.4.2.Final'
+    lombokVersion = "1.18.12"
+}
+
+group 'io.alxndr'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 순서 주의!
+    // Lombok 사용시 MapStruct가 먼저오게 작성해야함
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: "${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+
+    // If you are using mapstruct in test code
+//    testAnnotationProcessor "org.mapstruct:mapstruct-processor:1.4.2"
+
+
+testCompile group: 'junit', name: 'junit', version: '4.12'
+}
