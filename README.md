@@ -12,6 +12,10 @@ Spring Exception Handler 공부 프로젝트
 JPA 학습/복습 프로젝트   
 참고 : 인프런 김영한님 강의
 
+## Demo-mapstruct
+MapStruct 간단 실습 프로젝트
+해당 폴더안에 `README` 참고
+
 ## Demo-spring-batch (..ing)
 Spring batch 학습을 위한 프로젝트
 
