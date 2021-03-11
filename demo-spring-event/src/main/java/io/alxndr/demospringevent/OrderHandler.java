@@ -15,7 +15,7 @@ public class OrderHandler {
     @Autowired
     private MessageService messageService;
 
-
+    @Async
     @EventListener
     public void sendKakaoEvent(Order order) {
         StopWatch sw = new StopWatch();
@@ -27,6 +27,7 @@ public class OrderHandler {
         System.out.println("KAKAO Send  " + sw.getTotalTimeSeconds() + " |  Thread = " + Thread.currentThread());
     }
 
+    @Async
     @EventListener
     public void sendEmailEvent(Order order) {
         StopWatch sw = new StopWatch();
