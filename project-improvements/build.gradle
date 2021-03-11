@@ -2,11 +2,17 @@ plugins {
     id 'org.springframework.boot' version '2.4.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'war'
 }
 
 group = 'io.alxndr'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+
+bootWar {
+    archiveBaseName="ROOT"
+    archiveVersion= ""
+}
 
 configurations {
     compileOnly {
@@ -22,6 +28,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.h2database:h2'
