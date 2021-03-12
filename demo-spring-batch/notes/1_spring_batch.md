@@ -25,6 +25,7 @@ Spring Batch의 메타 데이터는 다음과 같은 내용들을 담고 있습�
     - `-- job.name=stepNextJob`
 
 ### 성공 조건 별로 Step을 사용하기
+-> program argument : --job.name=stepNextConditionalJob version=2
 
 1. step1 실패 시나리오: step1 -> step3   
 2. step1 성공 시나리오: step1 -> step2 -> step3
@@ -54,3 +55,26 @@ Batch 1 -> Batch 3이 실행됨
 
 - ExitStatus 주석 후 실행   
 ![img](./images/conditional2.png)
+
+
+```java
+public static class OddDecider implements JobExecutionDecider {
+
+    @Override
+    public FlowExecutionStatus decide(JobExecution jobExecution, StepExecution stepExecution) {
+        Random rand = new Random();
+        int randomNumber = rand.nextInt(50) + 1;
+        log.info("랜덤숫자 : {}", randomNumber);
+
+        if (randomNumber % 2 == 0) {
+            return new FlowExecutionStatus("EVEN");
+        } else {
+            return new FlowExecutionStatus("ODD");
+        }
+    }
+}
+```
+- `JobExcutionDecider` 인터페이스를 구현한 `OddDecider`
+- 랜덤 값을 발생시켜 짝수/홀수 여부에 따라 다른 상태를 반환
+- `step`으로 처리하는게 아니기 떄문에 `ExitStatus`가 아닌 `FlowExcutionStatus`로 상태를 관리
+![img](./images/oddeven.png)
