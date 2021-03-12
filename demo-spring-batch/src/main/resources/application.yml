@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:tcp://localhost/~/batch
+      username: sa
+      password:
+      driver-class-name: org.h2.Driver
+  batch:
+    job:
+      names: ${job.name:NONE}
+      # Program Argument로 넘어오는 job.name 값이 넘어오면 해당값과 일치하는 JOB만 실행
+      # {job.name:NONE} : job.name이 있을 떄만 적용
