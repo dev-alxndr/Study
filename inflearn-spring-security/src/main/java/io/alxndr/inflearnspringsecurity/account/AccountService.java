@@ -21,7 +21,7 @@ public class AccountService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Account account = accountRepository.findByUsername(username);
         if (account == null) {
-            throw new UsernameNotFoundException(username);
+            throw new UsernameNotFoundException(username);  // 해당 계정이 없는 경우 Exception
         }
 
         return User.builder()
@@ -29,5 +29,10 @@ public class AccountService implements UserDetailsService {
                 .password(account.getPassword())
                 .roles(account.getRole())
                 .build();
+    }
+
+    public Account createAccount(Account account) {
+        account.setPassword("{noop}" + account.getPassword());
+        return accountRepository.save(account);
     }
 }

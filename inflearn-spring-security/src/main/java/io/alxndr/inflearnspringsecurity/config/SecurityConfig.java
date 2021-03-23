@@ -18,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()    // 인가
-                    .mvcMatchers("/", "/info").permitAll()  // 권한 필요없음
+                    .mvcMatchers("/", "/info", "/account/**").permitAll()  // 권한 필요없음
                     .mvcMatchers("/admin").hasRole("ADMIN") // ADMIN ROLE 을 가진 사용자만 접근 가능
                     .anyRequest().authenticated();  // 그외의 접근은 권한 필요
 
@@ -28,10 +28,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic();
     }
 
-    @Override
+  /*
+   JPA 연동으로 인해 삭제
+   @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("alxndr").password("{noop}1234").roles("USER").and()
                 .withUser("admin").password("{noop}4321").roles("ADMIN");   // {PREFIX}password
-    }
+    }*/
 }
