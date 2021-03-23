@@ -137,3 +137,35 @@ public class AccountService implements UserDetailsService {
 ![](./images/create-admin.png)    
 
 ![](./images/create-user.png)
+
+![](./images/hello-from-dashboard.png)
+
+
+### 명시적으로 UserDetailsService 지정하기
+- SecurityConfig
+```java
+@Configuration
+@EnableWebSecurity
+@RequiredArgsConstructor
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    
+    private final AccountService accountService;
+    ....생략
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(accountService);
+    }
+}
+```
+위 처럼 `AuthenticationManagerBuilder`로 명시적으로 지정해줄 수 있지만,
+하지 않아도 `UserDeatilsService`를 구현한 구현체가 Bean으로 등록만 되어있다면
+사용에 문제는 없습니다. 
+
+
+### 마무리
+
+`Inmemory User`의 불편한 점들을 JPA와의 연동으로 해결해봤습니다.
+다음으로는 임시로 적어준 `{noop}`을 스프링 시큐리티가 제공해주는 `PasswordEncoder`
+를 활용하여 개선해보겠습니다.
+
+
