@@ -21,7 +21,7 @@ public class Application {
 }
 ```
 1. PasswordEncoder를 Bean를 등록해줍니다.
-2. 우리가 선택한 NoOpPasswordEncoder는 Spring Framework 5이전에 사용되던 방식입니다.
+2. 우리가 선택한 `NoOpPasswordEncoder`는 Spring Framework 5이전에 사용되던 방식입니다.
 3. 현재는 `Deprecated`된 상태입니다.
 
 ### 등록한 Bean 주입받아서 유저 등록 시 encoding하기
@@ -39,7 +39,7 @@ public class AccountService implements UserDetailsService {
     }
 }
 ```
-1. `AccountService`에서 Bean으로 등록한 `PasswordEncoder`를 생성자주입방식으로 주입받습니다.
+1.  Bean으로 등록한 `PasswordEncoder`를 `AccountService`에서를 생성자주입방식으로 주입받습니다.
 2. `{noop}`문자열을 더해주던 부분에 주입받은 `PasswordEncoder`를 사용하여 `encode`해줍니다.
 
 ### 확인
@@ -94,7 +94,18 @@ public class Application {
 ![](./images/delegaingEncoder.png)
 2. `PasswordEncoder`의 실제 구현체는 `DelegatingPasswordEncoder`를 사용하게 되고 그 안에 `matches()`를 확인해보겠습니다.
 ![](./images/match_process.png)
-    1.`rawPassword`와 DB에 저장된 암호화된 패스워드를 인자로 받습니다.
-    2. `extractId(prefixEncodedPassword)`를 통해 암호화된 패스워드가 어떤 알고리즘인지 확인합니다.
+    1.`rawPassword`와 DB에 저장된 암호화된 패스워드를 인자로 받는다.
+    2. `extractId(prefixEncodedPassword)`를 통해 암호화된 패스워드가 어떤 알고리즘인지 확인한다.
     3. `this.idToPasswordEncoder` Map에서 id로 해당 PasswordEncoder를 찾아온다.
+    4. `extractEcodedPassword()`로 `{ID}`외의 패스워드를 추출한다.
+    5. 3번에서 찾아온 `PasswordEncoder`가 만약 `BcryptPasswordEncoder`라고 한다면 해당 클래스에 `matches()`를 이용하여 패스워드가 일치하는지 확인한다.
     
+## 정리
+Spring Security 에서 PasswordEncoder를 사용하는 방법과
+비밀번호 일치여부를 확인하는 과정을 알아봤습니다.
+
+틀린점과 개선할 상항이 있다면 알려주세요.
+감사합니다.
+  
+    
+
