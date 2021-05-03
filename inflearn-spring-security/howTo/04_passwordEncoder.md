@@ -94,11 +94,11 @@ public class Application {
 ![](./images/delegaingEncoder.png)
 2. `PasswordEncoder`의 실제 구현체는 `DelegatingPasswordEncoder`를 사용하게 되고 그 안에 `matches()`를 확인해보겠습니다.
 ![](./images/match_process.png)
-    1.`rawPassword`와 DB에 저장된 암호화된 패스워드를 인자로 받는다.
-    2. `extractId(prefixEncodedPassword)`를 통해 암호화된 패스워드가 어떤 알고리즘인지 확인한다.
-    3. `this.idToPasswordEncoder` Map에서 id로 해당 PasswordEncoder를 찾아온다.
-    4. `extractEcodedPassword()`로 `{ID}`외의 패스워드를 추출한다.
-    5. 3번에서 찾아온 `PasswordEncoder`가 만약 `BcryptPasswordEncoder`라고 한다면 해당 클래스에 `matches()`를 이용하여 패스워드가 일치하는지 확인한다.
+    1. `rawPassword`와 DB에 저장된 암호화된 패스워드를 인자로 받는다.   
+    2. `extractId(prefixEncodedPassword)`를 통해 암호화된 패스워드가 어떤 알고리즘인지 확인한다.   
+    3. `this.idToPasswordEncoder` Map에서 id로 해당 PasswordEncoder를 찾아온다.   
+    4. `extractEcodedPassword()`로 `{ID}`외의 패스워드를 추출한다.   
+    5. 3번에서 찾아온 `PasswordEncoder`가 만약 `BcryptPasswordEncoder`라고 한다면 해당 클래스에 `matches()`를 이용하여 패스워드가 일치하는지 확인한다.   
     
 ## 정리
 Spring Security 에서 PasswordEncoder를 사용하는 방법과
