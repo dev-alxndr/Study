@@ -45,7 +45,7 @@ public class AccountService implements UserDetailsService {
 ### 확인
 서버를 구동하여 지난 번글과 같이 
 `http://localhost:8080/account/USER/alxndr/1234` 유저를 등록해보면
-![](./images/password-encoder-user.png)
+![](./images/password-encoder-user.png)  
 그림과 같이 `{noop}`은 붙어있지않은 패스워드가 저장되게 됩니다.   
 
 그리고 `/dashboard`로 접속하여 로그인해보면 정상적으로 로그인되는 것을 확인 할 수 있습니다.   

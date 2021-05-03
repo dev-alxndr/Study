@@ -1,11 +1,16 @@
 # Spring Security Dependency
 
-`implementation 'org.springframework.boot:spring-boot-starter-security'`
+- build.gradle
+```gradle
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+}
+```
 
 1. 인증 가능
 2. 사용자 정보 알 수 있다.
 ### Security Setting
-- SecurityConfig
+- SecurityConfig.java
 ```java
 @Configuration
 @EnableWebSecurity
@@ -31,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 ### Sample Controller
-- SampleController
+- SampleController.java
 ```java
 @Controller
 public class SampleController {
