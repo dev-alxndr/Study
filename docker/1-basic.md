@@ -22,6 +22,7 @@ $docker exec -it <CONTAINER_NAME> /bin/bash
 ```
 - `-i`(interactive), `-t`(Pseudo-tty) 옵션을 사용하면 실행된 Bash 셀에 입력 및 출력 가능
 - `exec` 명령을 이용해 2번에서 만든 Container에 접속
+- `--restart unless-stopped` Docker Container를 자동으로 재시작하고 싶다면 옵션 추가
 - `redis-cli`
 - `redis-cli` 접속 확인
 - `/bin/bash` 말고 `redis-cli`로 연결하면 바로 `redis-cli`로 연결됨
