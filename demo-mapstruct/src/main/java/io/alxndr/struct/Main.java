@@ -13,16 +13,16 @@ public class Main {
                 .id(1L)
                 .name("Alexander Choi")
                 .email("dev.alxndr@gmail.com")
-                .birth("1995-10-14")
+                .birth("1995-01-01")
                 .build();
 
         Person person = PersonMapper.INSTANCE.toEntity(personDto);
         System.out.println("car.toString() = " + person.toString());
 
-
         // Entity -> Dto
         PersonDto newPersonDto = PersonMapper.INSTANCE.toDto(person);
         System.out.println("newCarDto.toString() = " + newPersonDto.toString());
+
 
     }
 }
