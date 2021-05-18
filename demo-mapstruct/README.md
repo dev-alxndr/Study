@@ -1,6 +1,11 @@
 # MapStruct 
 
-MapStruct 실습 프로젝트
+## 소개
+`DTO` <-> `Entity`간 객체 Mapping을 편하게 도와주는 라이브러리   
+비슷한 라이브러리로 [ModelMapper](http://modelmapper.org/)가 있습니다.
+
+> `ModelMapper`는 변환과정에서 리플렉션이 발생합니다.   
+> `MapStruct`는 컴파일 시점에 구현체를 만들어내기 떄문에 리플렉션이 발생하지 않아 보다 빠릅니다. 
 
 간단하게 Gradle 프로젝트로 구성
 
@@ -155,3 +160,4 @@ public class PersonTest {
 - [Reference Guide](https://mapstruct.org/documentation/stable/reference/html/)   
 - [huisam Blog](https://huisam.tistory.com/entry/mapStruct)
 - [Meet up Toast](https://meetup.toast.com/posts/213)
+- [ModelMapper vs MapStruct](https://mangchhe.github.io/spring/2021/01/25/ModelMapperAndMapStruct/)
