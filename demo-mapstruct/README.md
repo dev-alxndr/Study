@@ -112,8 +112,8 @@ public interface PersonMapper {
 
 > `Mapper`를 만든 후 Project Build를 한번 해준다.
 
-[](/images/path.png)
-[](/images/impl.png)
+[](./images/path.png)
+[](./images/impl.png)
 > 이미지 처럼 MapperImpl이 생긴것을 확인할 수 있다.
 ### 5. TEST
 - PersonTest.java
