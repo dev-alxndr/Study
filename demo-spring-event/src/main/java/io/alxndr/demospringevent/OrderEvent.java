@@ -1,5 +1,6 @@
 package io.alxndr.demospringevent;
 
+
 import org.springframework.context.ApplicationEvent;
 
 public class OrderEvent extends ApplicationEvent {
