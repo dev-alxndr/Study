@@ -25,7 +25,9 @@ public class EventController {
     private final EventRepository eventRepository;
 
     @PostMapping
-    public ResponseEntity createEvent(@RequestBody Event event) {
+    public ResponseEntity createEvent(@RequestBody EventDto eventDto) {
+
+        Event event = EventMapper.INSTANCE.toEntity(eventDto);
 
         Event newEvent = this.eventRepository.save(event);
         URI createdUri = linkTo(EventController.class).slash(newEvent.getId()).toUri();

@@ -2,6 +2,7 @@ package me.alxndr.restapi.events;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.tomcat.jni.Local;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -51,13 +52,15 @@ public class EventTestControllerTest {
                 .maxPrice(200)
                 .limitOfEnrollment(100)
                 .location("강남역 D2 스터트업 팩토리")
+                .free(true)
+                .offline(false)
                 .build();
 
         /**
          * 현재 Test는 Web Slicing Test라 Repository는 Bean으로 등록되지않는다.
          * 그러므로 실행시 NPE 가 발생하므로, Mockito를 사용하여 Mocking해준다.
          */
-        event.setId(10L);
+//        event.setId(10L);
         Mockito.when(eventRepository.save(event)).thenReturn(event);
 
         mockMvc.perform(post("/api/events")
@@ -69,9 +72,9 @@ public class EventTestControllerTest {
                 .andExpect(jsonPath("id").exists())
                 .andExpect(header().exists(HttpHeaders.LOCATION)) // Location 정보가 있는지
                 .andExpect(header().string(HttpHeaders.CONTENT_TYPE, MediaTypes.HAL_JSON_VALUE)) // header에 해당 정보가 있는지
+                .andExpect(jsonPath("id").value(Matchers.not(10)))
+                .andExpect(jsonPath("free").value(Matchers.not(true)))
         ;
     }
-
-
 
 }
