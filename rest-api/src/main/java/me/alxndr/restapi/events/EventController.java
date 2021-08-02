@@ -31,7 +31,7 @@ public class EventController {
 
         Event newEvent = this.eventRepository.save(event);
         URI createdUri = linkTo(EventController.class).slash(newEvent.getId()).toUri();
-        event.setId(10L);
+        event.setId(1L);
         return ResponseEntity.created(createdUri).body(newEvent);
     }
 
