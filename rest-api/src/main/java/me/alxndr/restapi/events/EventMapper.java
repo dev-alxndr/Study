@@ -13,6 +13,10 @@ public interface EventMapper {
 
     EventMapper INSTANCE = Mappers.getMapper(EventMapper.class);
 
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "offline", ignore = true)
+    @Mapping(target = "free", ignore = true)
+    @Mapping(target = "eventStatus", ignore = true)
     Event toEntity(EventDto eventDto);
 
     EventDto toDto(Event person);

@@ -68,6 +68,7 @@ public class EventTestControllerTest {
                 .andExpect(header().string(HttpHeaders.CONTENT_TYPE, MediaTypes.HAL_JSON_VALUE)) // header에 해당 정보가 있는지
                 .andExpect(jsonPath("id").value(Matchers.not(100L)))
                 .andExpect(jsonPath("free").value(Matchers.not(true)))
+                .andExpect(jsonPath("eventStatus").value(Matchers.is(EventStatus.DRAFT.name())))
         ;
     }
 
