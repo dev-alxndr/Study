@@ -24,7 +24,7 @@ public class ExceptionController {
         return "error/404";
     }
 
-    @ResponseStatus(code = HttpStatus.NOT_FOUND)
+    @ResponseStatus(code = HttpStatus.NOT_FOUND)    // Error를 잡으면 status200 으로 응답하기에 직접 status를 지정
     @ExceptionHandler(value = NotFoundRunTimeException.class)
     public String notFoundRunTime(NotFoundRunTimeException nfrte) {
 
