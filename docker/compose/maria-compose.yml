@@ -1,17 +1,15 @@
-version: '3'
+version: "3"
 
 services:
-    db:
-        container_name: maria-db
-        image: mariadb
-        ports:
-            - 3306:3306
-        version: latest
-        restart: always
-        environment:
-            MYSQL_ROOT_PASSWORD: test
-            MARIADB_DATABASE: test
-            TZ: Asia/Seoul
-        volumes:
-            /{path}:/var/lib/mysql
-# https://int-i.github.io/sql/2020-12-31/mysql-docker-compose/
+  db:
+    container_name: test-container
+    image: mariadb:latest
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MARIADB_DATABASE: test
+      TX: Asia/Seoul
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
