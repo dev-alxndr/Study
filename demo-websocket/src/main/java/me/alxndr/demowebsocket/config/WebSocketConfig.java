@@ -2,10 +2,9 @@ package me.alxndr.demowebsocket.config;
 
 import lombok.RequiredArgsConstructor;
 import me.alxndr.demowebsocket.ChatHandler;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.socket.config.annotation.EnableWebSocket;
-import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
-import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+import org.springframework.messaging.simp.config.MessageBrokerRegistry;
+import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 /**
  * https://dev-gorany.tistory.com/224?category=901854
@@ -13,18 +12,21 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
  * @author : Alexander Choi
  * @date : 2021/11/24
  */
-@Configuration
+//@Configuration
 @RequiredArgsConstructor
-@EnableWebSocket
-public class WebSocketConfig implements WebSocketConfigurer {
+//@EnableWebSocket
+public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     private final ChatHandler chatHandler;
 
     @Override
-    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+        registry.addEndpoint("/example").withSockJS();
+    }
 
-        registry.addHandler(chatHandler, "ws/chat")
-                .setAllowedOriginPatterns("*");
-
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry registry) {
+        registry.setApplicationDestinationPrefixes("/test");
+        registry.enableStompBrokerRelay("/topic", "/queue");
     }
 }

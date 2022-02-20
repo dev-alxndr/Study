@@ -2,6 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="node_modules/webstomp-client/dist/webstomp.min.js"></script>
 <th:block>
     <th:block th:fragment="content">
 
@@ -37,7 +38,8 @@
             send();
         });
 
-        const websocket = new WebSocket("ws://localhost:8080/ws/chat");
+        const websocket = new WebSocket("/ws-stomp");
+        var stomp = webstomp.over(websocket);
 
         websocket.onmessage = onMessage;
         websocket.onopen = onOpen;
